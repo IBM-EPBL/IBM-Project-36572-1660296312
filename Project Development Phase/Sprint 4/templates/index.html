@@ -1,0 +1,1495 @@
+{% extends 'base.html' %}
+
+    {% block head %}
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Home || Fashion Factory</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        
+		<script>
+			window.watsonAssistantChatOptions = {
+			  integrationID: "a287b876-cfb0-4c00-8b5e-2cd6bcfa22f5", // The ID of this integration.
+			  region: "au-syd", // The region your integration is hosted in.
+			  serviceInstanceID: "f53ba56a-81c4-4f3a-ad1d-7043fb83f98d", // The ID of your service instance.
+			  onLoad: function(instance) { instance.render(); }
+			};
+			setTimeout(function(){
+			  const t=document.createElement('script');
+			  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+			  document.head.appendChild(t);
+			});
+		  </script>
+		
+		<!-- Place favicon.ico in the root directory -->
+		<!-- Google Font -->
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500.00,700,300' rel='stylesheet' type='text/css'>
+		<!-- all css here
+		<!-- bootstrap v3.3.6 css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}">
+		<!-- animate css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/animate.css') }}">
+		<!-- jquery-ui.min css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/jquery-ui.min.css') }}">
+		<!-- meanmenu css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/meanmenu.min.css') }}">
+		<!-- nivo-slider css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/nivo-slider.css') }}">
+		<!-- owl.carousel css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/owl.carousel.css') }}">
+		<!-- flaticon css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/shopick-icon.css') }}">
+		<!-- pe-icon-7-stroke css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/pe-icon-7-stroke.css') }}">
+		<!-- lightbox css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/lightbox.min.css') }}">
+		<!-- style css -->
+		<link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+		<!-- responsive css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/responsive.css') }}">
+		<!-- modernizr css -->
+        <script src="{{ url_for('static', filename= 'js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+	<style>
+		.single-promo-banner.promo-banner-1 {
+  background: rgba(0, 0, 0, 0) url("../static/img/banner/promo-banner/bg.jpg") no-repeat scroll center center;
+}.single-promo-banner.promo-banner-2 {
+  background: rgba(0, 0, 0, 0) url({{ url_for ('static', filename= '../static/img/banner/promo-banner/bg4.jpg') }}) no-repeat scroll right center / cover; 
+}
+.page-banner-area {
+  background: rgba(0, 0, 0, 0) url("../static/img/banner/page-banner/mens1.jpg") no-repeat scroll center center;
+}
+.page-banner-area.photo-2 {
+  background: rgba(0, 0, 0, 0) url("../static/img/banner/page-banner/womens1.jpg") no-repeat scroll center center; 
+}
+.page-banner-area.photo-3 {
+  background: rgba(0, 0, 0, 0) url("../static/img/banner/page-banner/mens1.jpg") no-repeat scroll center center; 
+}
+.page-banner-area.photo-4 {
+  background: rgba(0, 0, 0, 0) url("../static/img/banner/page-banner/mens1.jpg") no-repeat scroll center center; 
+}
+
+	</style>
+		
+    {% endblock %}
+	
+	{% block body %}
+    <body>
+        
+		
+		<!-- HEADER-AREA START -->
+        <header class="header-area">
+			<!-- Header-Top Start -->
+			<div class="header-top hidden-xs">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<div class="header-top-left text-left">
+								<ul>
+									<li>
+										<i class="sp-phone"></i>
+										<span>+91 9213518420</span>
+									</li>
+									<li>
+										<i class="sp-email"></i>
+										<span>FashionFactory@domain.com</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="header-top-right pull-right">
+								<ul>
+									<li><a href="#">Account <span><i class="sp-gear"></i></span></a>
+										<ul class="submenu">
+											<li><a href="{{ url_for('myaccount')}}">My Account</a></li>
+											<li><a href="{{ url_for('wishlist')}}">Wishlist</a></li>
+											<li><a href="{{ url_for('checkout')}}">Checkout</a></li>
+											<li><a href="{{ url_for('login')}}">Login</a></li>
+										</ul>
+									</li>
+								</ul>
+								<div class="header-search">
+									<form action="#">
+										<input type="text" placeholder="Search..." />
+										<button type="submit"><i class="sp-search"></i></button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Header-Top End -->
+			<!-- Main-Header Start -->
+			<div class="main-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2 col-sm-6 col-xs-12">
+							<div class="logo">
+								<a href="{{ url_for('home')}}"><img src="../static/img/logonew1.png" alt="" /></a>
+							</div>
+						</div>
+						<div class="col-md-8 hidden-sm hidden-xs">
+							<div class="main-menu pull-right">
+								<nav>
+									<ul>
+										<li><a href="{{ url_for('home')}}">home</a>
+											<ul class="submenu">
+												<li class="submenu-title"><a href="#">Home pages</a></li>
+												<li><a href="{{ url_for('home')}}">Homepage</a></li>
+												
+											</ul>
+										</li>
+										<li><a href="{{ url_for('shop')}}">mens</a></li>
+										<li><a href="{{ url_for('shoplist')}}">womens</a></li>
+										<li><a href="{{ url_for('shop')}}">shop</a>
+											<div class="mega-menu">
+												<span>
+													<a class="mega-menu-title" href="#">WOMEN CLOTH</a>
+													<a href="#">casual shirt</a>
+													<a href="#">rikke t-shirt</a>
+													<a href="#">mia top</a>
+													<a href="#">mia top</a>
+													<a href="#">muscle tee</a>
+													<a href="#">seine blouse</a>
+												</span>
+												<span>
+													<a class="mega-menu-title" href="#">MEN CLOTH</a>
+													<a href="#">casual shirt</a>
+													<a href="#">t-shirt</a>
+													<a href="#">t-shirt</a>
+													<a href="#">zeans</a>
+													<a href="#">trousers/ pants </a>
+													<a href="#">sweamwear</a>
+												</span>
+												<span>
+													<a class="mega-menu-title" href="#">WOMEN JEWELRY</a>
+													<a href="#">necklace</a>
+													<a href="#">samhar cuff</a>
+													<a href="#">samhar cuff</a>
+													<a href="#">samhar cuff</a>
+													<a href="#">nail set</a>
+													<a href="#">drop earrings</a>
+												</span>
+												<span class="mega-menu-photo">
+													<a href="#"><img src="../static/img/megamenu/meg.jpg" alt="" /></a>
+												</span>
+											</div>
+										</li>
+										<li><a href="#">Pages</a>
+											<ul class="submenu">
+												<li class="submenu-title"><a href="#">All pages</a></li>
+												<li><a href="{{ url_for('shop')}}">Shop</a></li>
+												<li><a href="{{ url_for('shoplist')}}">Shop-List</a></li>
+												<li><a href="{{ url_for('singleproduct')}}">Single Product</a></li>
+												<li><a href="{{ url_for('cart')}}">Shopping Cart</a></li>
+												<li><a href="{{ url_for('wishlist')}}">Wishlist</a></li>
+												<li><a href="{{ url_for('checkout')}}">Checkout</a></li>
+												<li><a href="{{ url_for('login')}}">Login</a></li>
+												<li><a href="{{ url_for('myaccount')}}">My Account</a></li>
+								                
+												
+												<li><a href="{{ url_for('contact')}}">Contact Us</a></li>
+											</ul>
+										</li>
+										<li><a href="{{ url_for('contact')}}">contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-6 col-xs-12">
+							<div class="total-cart">
+								<ul>
+									<li>
+										<a href="#">
+											<span class="total-cart-number">2 Item</span>
+											<span><i class="sp-shopping-bag"></i></span>
+										</a>
+										<!-- Mini-cart-content Start -->
+										<div class="total-cart-brief">
+											<div class="cart-photo-details">
+												<div class="cart-photo">
+													<a href="#"><img src="../static/img/total-cart/scart.jpg" alt="" /></a>
+												</div>
+												<div class="cart-photo-brief">
+													<a href="#">Men's Shirt Shirt</a>
+													<span>$25.00</span>
+												</div>
+												<div class="pro-delete">
+													<a href="#"><i class="sp-circle-close"></i></a>
+												</div>
+											</div>
+											<div class="cart-photo-details">
+												<div class="cart-photo">
+													<a href="#"><img src="../static/img/total-cart/scartt.jpg" alt="" /></a>
+												</div>
+												<div class="cart-photo-brief">
+													<a href="#">Men's Shirt Shirt</a>
+													<span>$25.00</span>
+												</div>
+												<div class="pro-delete">
+													<a href="#"><i class="sp-circle-close"></i></a>
+												</div>
+											</div>
+											<div class="cart-subtotal">
+												<p>Total = $50.00</p>
+											</div>
+											<div class="cart-inner-btm">
+												<a href="{{ url_for('checkout')}}">Checkout</a>
+											</div>
+										</div>
+										<!-- Mini-cart-content End -->
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Main-Header End -->
+			<!-- Mobile-menu start -->
+			<div class="mobile-menu-area hidden-md hidden-lg">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="mobile-menu">
+								<nav id="dropdown">
+									<ul>
+										<li><a href="index.html">home</a>
+											<ul class="submenu">
+												<li class="submenu-title"><a href="#">Home pages</a></li>
+												<li><a href="index.html">Homepage Version 1</a></li>
+												</ul>
+										</li>
+										<li><a href="shop.html">mens</a></li>
+										<li><a href="shop-list.html">womens</a></li>
+										<li><a href="shop.html">shop</a></li>
+										<li><a href="#">Pages</a>
+											<ul class="submenu">
+												<li class="submenu-title"><a href="#">All pages</a></li>
+												<li><a href="shop.html">Shop</a></li>
+												<li><a href="shop-list.html">Shop-List</a></li>
+												<li><a href="single-product.html">Single Product</a></li>
+												<li><a href="cart.html">Shopping Cart</a></li>
+												<li><a href="wishlist.html">Wishlist</a></li>
+												<li><a href="checkout.html">Checkout</a></li>
+												<li><a href="login.html">Login</a></li>
+												<li><a href="my-account.html">My Account</a></li>
+												
+										        <li><a href="contact.html">Contact Us</a></li>
+											</ul>
+										</li>
+										<li><a href="contact.html">contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Mobile-menu end -->			
+		</header>
+		<!-- HEADER-AREA END -->
+
+		<!-- PAGE-CONTENT START -->
+		<section class="page-content">
+			<!-- SLIDER-AREA START -->
+			<div class="slider-area margin-bottom-80">
+				<div class="bend niceties preview-2">
+					<div id="ensign-nivoslider" class="slides">	
+						<img src="../static/img/slider/slider-1/slide1.jpg" alt="" title="#slider-direction-1"  />
+
+						<img src="../static/img/slider/slider-1/slide2.png" alt="" title="#slider-direction-2"  />
+						<img src="../static/img/slider/slider-1/slide3.jpg" alt="" title="#slider-direction-3"  />
+						<img src="../static/img/slider/slider-1/slide4.jpg" alt="" title="#slider-direction-3"  />
+					</div>
+					<!-- direction 1 -->
+					<div id="slider-direction-1" class="t-cn slider-direction">
+						<div class="slider-progress"></div>
+						<div class="slider-content t-lfl s-tb">
+							<div class="title-container s-tb-c title-compress">
+								<div class="slider-1">
+									<div class="wow fadeInUpBig" data-wow-duration="1.2s" data-wow-delay="0.5s">
+										<h1 class="title1">new fashion collection</h1>
+									</div>
+									<div class="image wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.7s">
+										<span><img src="../static/img/slider/slider-1/slider-border.png" alt="" /></span>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="1.8s" data-wow-delay="0.9s">
+										<p class="slider-brief">"Fashion is part of the daily air and it changes all the time, with all the events. You can even see the approaching of a revolution in clothes. You can see and feel everything in clothes." </p>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="2s" data-wow-delay="1.1s">
+										<a href="#" class="shop-now">shop now</a>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<!-- direction 2 -->
+					<div id="slider-direction-2" class="slider-direction">
+						<div class="slider-progress"></div>
+						<div class="slider-content t-lfl s-tb">
+							<div class="title-container s-tb-c title-compress">
+								<div class="slider-1">
+									<div class="wow fadeInUpBig" data-wow-duration="1.2s" data-wow-delay="0.5s">
+										<h1 class="title1">Men's fashion collection</h1>
+									</div>
+									<div class="image wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.7s">
+										<span><img src="../static/img/slider/slider-1/slider-border.png" alt="" /></span>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="1.8s" data-wow-delay="0.9s">
+										<p class="slider-brief">One is never over-dressed or under-dressed with a Little Black Dress.</p>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="2s" data-wow-delay="1.1s">
+										<a href="#" class="shop-now">shop now</a>
+									</div>
+								</div>
+							</div>
+						</div>		
+					</div>
+					<!-- direction 3 -->
+					<div id="slider-direction-3" class="slider-direction">
+						<div class="slider-progress"></div>
+						<div class="slider-content t-lfl s-tb">
+							<div class="title-container s-tb-c title-compress">
+								<div class="slider-1">
+									<div class="wow fadeInUpBig" data-wow-duration="1.2s" data-wow-delay="0.5s">
+										<h1 class="title1">Men's fashion collection</h1>
+									</div>
+									<div class="image wow fadeInUpBig" data-wow-duration="1.5s" data-wow-delay="0.7s">
+										<span><img src="../static/img/slider/slider-1/slider-border.png" alt="" /></span>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="1.8s" data-wow-delay="0.9s">
+										<p class="slider-brief">What you wear is how you present yourself to the world, especially today, when human contacts are so quick. Fashion is instant language."</p>
+									</div>
+									<div class="wow fadeInUpBig" data-wow-duration="2s" data-wow-delay="1.1s">
+										<a href="#" class="shop-now">shop now</a>
+									</div>
+								</div>
+							</div>
+						</div>		
+					</div>
+				</div>			
+			</div>
+			<!-- SLIDER-AREA END -->
+			<!-- BANNER-AREA START -->
+			<div class="banner-area fix margin-bottom-80">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="single-banner fix">
+								<div class="banner-photo padding-0 pull-left col-md-6 col-sm-6 col-xs-12">
+									<a href="#"><img src="../static/img/banner/promo1.jpg" alt="" /></a>
+								</div>
+								<div class="banner-brief banner-brief-right col-md-6 col-sm-6">
+									<h2>stylish <span> women </span></h2>
+									<h2 class="line-bottom"><span> product </span> collection</h2>
+									<a href="{{ url_for('shoplist')}}" class="shop-now">shop now</a>
+								</div>
+							</div>
+							<div class="single-banner fix">
+								<div class="banner-brief banner-brief-left col-md-6 col-sm-6">
+									<h2>Smart <span> Menz </span></h2>
+									<h2 class="line-bottom"><span> product </span> collection</h2>
+									<a href="{{ url_for('shop')}}" class="shop-now">shop now</a>
+								</div>
+								<div class="banner-photo padding-0 pull-right col-md-6 col-sm-6 col-xs-12">
+									<a href="#"><img src="../static/img/banner/promo.jpg" alt="" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- BANNER-AREA END -->
+			<!-- NEW-COLLECTION START -->
+			<div class="new-collection-area fix margin-bottom-80">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-title text-center">
+							<h2 class="border-left-right-btm">New Collection</h2>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-6 padding-0">
+					<div class="single-collection">
+						<div class="collection-photo">
+							<a href="#"><img src="../static/img/new-collection/nc1.jpg" alt="" /></a>
+						</div>
+						<div class="collection-brief">
+							<div class="text-right">
+								<span class="new">new</span>
+							</div>
+							<h2>new <br /> <span>fashion</span></h2>
+							<ul>
+								<li>100% cotton</li>
+								<li>fress product</li>
+								<li>black color</li>
+								<li>high qualiety</li>
+							</ul>
+							<a href="{{ url_for('shoplist')}}" class="shop-now active-shop-now">shop now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-6 padding-0">
+					<div class="single-collection">
+						<div class="collection-photo">
+							<a href="#"><img src="../static/img/new-collection/nc2.jpg" alt="" /></a>
+						</div>
+						<div class="collection-brief">
+							<div class="text-right">
+								<span class="new">new</span>
+							</div>
+							<h2>new <br /> <span>fashion</span></h2>
+							<ul>
+								<li>100% cotton</li>
+								<li>fress product</li>
+								<li>black color</li>
+								<li>high qualiety</li>
+							</ul>
+							<a href="{{ url_for('shop')}}" class="shop-now active-shop-now">shop now</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 hidden-md hidden-sm padding-0 ">
+					<div class="single-collection">
+						<div class="collection-photo">
+							<a href="#"><img src="../static/img/new-collection/nc3.jpg" alt="" /></a>
+						</div>
+						<div class="collection-brief">
+							<div class="text-right">
+								<span class="new">new</span>
+							</div>
+							<h2>new <br /> <span>fashion</span></h2>
+							<ul>
+								<li>100% cotton</li>
+								<li>fress product</li>
+								<li>black color</li>
+								<li>high qualiety</li>
+							</ul>
+							<a href="{{ url_for('shop')}}" class="shop-now active-shop-now">shop now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- NEW-COLLECTION END -->
+			<!-- PRODUCT-AREA START -->
+			<div class="product-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="section-title text-center">
+								<h2 class="border-left-right-btm">All Product's</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="active-product" class="product-slider">
+					<!-- Single-product start -->
+					<div class="single-product">
+						<div class="product-photo">
+							<a href="#">
+								<img class="primary-photo" src="../static/img/product/h10.jpg" alt="" />
+								<img class="secondary-photo" src="../static/img/product/h13.jpg" alt="" />
+							</a>
+							<div class="pro-action">
+								<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+								<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+								<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+							</div>
+						</div>
+						<div class="product-brief">
+							<div class="pro-rating">
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-2"></i></a>
+							</div>
+							<h2><a href="single-product.html">Randomised Words</a></h2>
+							<h3>$450.00</h3>
+						</div>
+					</div>	
+					<!-- Single-product end -->
+					<!-- Single-product start -->
+					<div class="single-product">
+						<div class="product-photo">
+							<a href="#">
+								<img class="primary-photo" src="../static/img/product/h3.png" alt="" />
+								<img class="secondary-photo" src="../static/img/product/h11.jpg" alt="" />
+							</a>
+							<div class="pro-action">
+								<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+								<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+								<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+							</div>
+						</div>
+						<div class="product-brief">
+							<div class="pro-rating">
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-2"></i></a>
+							</div>
+							<h2><a href="#">Randomised Words</a></h2>
+							<h3>$500.00</h3>
+						</div>
+					</div>	
+					<!-- Single-product end -->
+					<!-- Single-product start -->
+					<div class="single-product">
+						<div class="product-photo">
+							<a href="#">
+								<img class="primary-photo" src="../static/img/product/h4.jpg" alt="" />
+								<img class="secondary-photo" src="../static/img/product/h12.jpg" alt="" />
+							</a>
+							<div class="pro-action">
+								<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+								<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+								<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+							</div>
+						</div>
+						<div class="product-brief">
+							<div class="pro-rating">
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-2"></i></a>
+							</div>
+							<h2><a href="#">Randomised Words</a></h2>
+							<h3>$500.00</h3>
+						</div>
+					</div>	
+					<!-- Single-product end -->
+					<!-- Single-product start -->
+					<div class="single-product">
+						<div class="product-photo">
+							<a href="#">
+								<img class="primary-photo" src="../static/img/product/h7.jpg" alt="" />
+								<img class="secondary-photo" src="../static/img/product/h8.jpg" alt="" />
+							</a>
+							<div class="pro-action">
+								<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+								<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+								<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+							</div>
+						</div>
+						<div class="product-brief">
+							<div class="pro-rating">
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-2"></i></a>
+							</div>
+							<h2><a href="#">Women's Fashion</a></h2>
+							<h3>$450.00</h3>
+						</div>
+					</div>	
+					<!-- Single-product end -->
+					<!-- Single-product start -->
+					<div class="single-product">
+						<div class="product-photo">
+							<a href="#">
+								<img class="primary-photo" src="../static/img/product/p1.jpg" alt="" />
+								<img class="secondary-photo" src="../static/img/product/h9.jpg" alt="" />
+							</a>
+							<div class="pro-action">
+								<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+								<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+								<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+							</div>
+						</div>
+						<div class="product-brief">
+							<div class="pro-rating">
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-2"></i></a>
+							</div>
+							<h2><a href="#">Randomised Words</a></h2>
+							<h3>$500.00</h3>
+						</div>
+					</div>	
+					<!-- Single-product end -->
+					<!-- Single-product start -->
+					<div class="single-product">
+						<div class="product-photo">
+							<a href="#">
+								<img class="primary-photo" src="../static/img/product/h14.jpg" alt="" />
+								<img class="secondary-photo" src="../static/img/product/h15.jpg" alt="" />
+							</a>
+							<div class="pro-action">
+								<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+								<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+								<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+							</div>
+						</div>
+						<div class="product-brief">
+							<div class="pro-rating">
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-1"></i></a>
+								<a href="#"><i class="sp-star rating-2"></i></a>
+							</div>
+							<h2><a href="#">Randomised Words</a></h2>
+							<h3>$500.00</h3>
+						</div>
+					</div>	
+					<!-- Single-product end -->
+				</div>
+			</div>
+			<!-- PRODUCT-AREA END -->
+			<!-- PROMOTIONAL-BANNER START -->
+			<div class="promotional-banner-area clearfix margin-bottom-80">
+				<div class="promotional-banner">
+					<!-- Single-promo start -->
+					<div class="col-md-6 col-sm-12 padding-0">
+						<div class="single-promo-banner promo-banner-1">
+							
+							<div class="promo-banner-brief">
+								
+								<h2>sale !</h2>
+								<h3>up to <span>30%</span>off</h3>
+								<h4>mens best products</h4>
+								<a class="shop-now active-shop-now" href="{{ url_for('shop')}}">shop now</a>
+							</div>
+						</div>
+					</div>
+					<!-- Single-promo End -->
+					<!-- Single-promo start -->
+					<div class="col-md-6 col-sm-12 padding-0">
+						<div class="single-promo-banner promo-banner-2">
+							
+							<div class="promo-banner-brief">
+								<div class="count-down">
+									<div class="timer">
+										<div data-countdown="2022/12/31"></div>
+									</div> 
+								</div>
+								<div class="upcomming-brief">
+								 <h2>upcomming best collection</h2>
+								 <h3><span>degles</span> warm</h3>
+								 <ul>
+								 	<li>100% cotton</li>
+								 	<li>best manufacturing</li>
+								 	<li>high quality materials</li>
+								 </ul>
+								 <a class="shop-now" href="{{ url_for('shop')}}">pre order</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Single-promo End -->
+				</div>
+			</div>
+			<!-- PROMOTIONAL-BANNER END -->
+			<!-- BEST-SELL-AREA START -->
+			<div class="best-sell-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="section-title text-center">
+								<h2 class="border-left-right-btm">Best Sell</h2>
+							</div>
+						</div>
+					</div>				
+					<div class="row">
+						<div class="col-md-12">
+							<!-- best-sell-menu -->
+							<ul role="tablist" class="best-sell-menu">
+								<li role="presentation" class="active"><a href="#men" role="tab" data-toggle="tab">Men</a></li>
+								<li role="presentation"><a href="#women"  role="tab" data-toggle="tab">Women</a></li>
+								<li role="presentation"><a href="#accessories"  role="tab" data-toggle="tab">Accessories</a></li>
+							</ul>
+							<!-- best-sell-product -->
+							<div class="tab-content best-sell-product">
+								<div role="tabpanel" class="tab-pane fade in active" id="men">
+									<div class="row">
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/bs1.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/bs2.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Women's Fashion</a></h2>
+													<div class="product-brief-inner">
+														<h3>$450.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/bs2.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/bs6.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+										</div>
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/bs3.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/bs5.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/bs4.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/bs3.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Women's Fashion</a></h2>
+													<div class="product-brief-inner">
+														<h3>$450.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+										</div>
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/bs5.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/bs2.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/bs6.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/bs1.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane fade" id="women">
+									<div class="row">
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/w1.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/w6.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Women's Fashion</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/w2.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/w5.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Women's Fashion</a></h2>
+													<div class="product-brief-inner">
+														<h3>$450.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+										</div>
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/w3.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/w4.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/w4.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/w3.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+										</div>
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/w5.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/w2.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Women's Fashion</a></h2>
+													<div class="product-brief-inner">
+														<h3>$450.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/w6.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/w1.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+										</div>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane fade" id="accessories">
+									<div class="row">
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/a1.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/a6.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/a2.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/a5.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Women's Fashion</a></h2>
+													<div class="product-brief-inner">
+														<h3>$450.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+										</div>
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/a3.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/a4.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/a4.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/a3.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+										</div>
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/a5.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/a2.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Women's Fashion</a></h2>
+													<div class="product-brief-inner">
+														<h3>$450.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+											<!-- Single-product start -->
+											<div class="single-product">
+												<div class="product-photo">
+													<a href="#">
+														<img class="primary-photo" src="../static/img/best-sell/a6.jpg" alt="" />
+														<img class="secondary-photo" src="../static/img/best-sell/a1.jpg" alt="" />
+													</a>
+													<div class="pro-action">
+														<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
+														<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+														<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
+													</div>
+												</div>
+												<div class="product-brief">
+													<h2><a href="#">Randomised Words</a></h2>
+													<div class="product-brief-inner">
+														<h3>$500.00</h3>
+														<div class="pro-rating">
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-1"></i></a>
+															<a href="#"><i class="sp-star rating-2"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<!-- Single-product end -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- BEST-SELL-AREA END -->
+			<!-- ALL-PRODUCT-VIEW START -->
+			<div class="all-product-view-area margin-bottom-80">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="all-product-view">
+								<div class="row">
+									<div class="col-md-7 col-sm-8 col-xs-12 col-sm-offset-1 col-md-offset-2">
+										<div class="all-product-brief">
+											<h2>to view all products together  !!</h2>
+											<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-3 col-xs-12">
+										<div class="all-product-view-link">
+											<a href="{{ url_for('shoplist')}}" class="shop-now">View All</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ALL-PRODUCT-VIEW END -->
+			<!-- FEATURED-AREA START -->
+			<div class="featured-area margin-bottom-80">
+				<div class="container">
+					<div class="row cus-row-1">
+						<div class="single-featured single-featured-1 featured-link">
+							<a href="#"><img src="../static/img/featured/d1.jpg" alt="" /></a>
+							<div class="featured-brief">
+								<a href="#"><i class="sp-arrow-long-right"></i></a>
+							</div>
+						</div>
+						<div class="single-featured single-featured-2">
+							<div class="single-featured-inner featured-link">
+								<a href="#"><img src="../static/img/featured/as1.jpg" alt="" /></a>
+								<div class="featured-brief">
+									<a href="#"><i class="sp-arrow-long-right"></i></a>
+								</div>
+							</div>
+							<div class="single-featured-inner featured-link">
+								<a href="#"><img src="../static/img/featured/as2.jpg" alt="" /></a>
+								<div class="featured-brief">
+									<a href="#"><i class="sp-arrow-long-right"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="single-featured single-featured-1 featured-link">
+							<a href="#"><img src="../static/img/featured/d2.jpg" alt="" /></a>
+							<div class="featured-brief">
+								<a href="#"><i class="sp-arrow-long-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- FEATURED-AREA END -->
+
+			<!-- SERVICE-AREA START -->
+			<div class="service-area margin-bottom-80">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<div class="single-service">
+								<div class="service-icon">
+									<i class="sp-transport"></i>
+								</div>
+								<div class="service-brief">
+									<h3>free shipping</h3>
+									<p>There are many variations of passages of Lorem Ipsum available, alteration</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<div class="single-service">
+								<div class="service-icon">
+									<i class="sp-head-phone"></i>
+								</div>
+								<div class="service-brief">
+									<h3>help line</h3>
+									<p>(+112) 1925184203 - call any time for any support Lorem Ipsum available, alteration </p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<div class="single-service">
+								<div class="service-icon">
+									<i class="sp-business"></i>
+								</div>
+								<div class="service-brief">
+									<h3>money back guarantee</h3>
+									<p>There are many variations of passages of Lorem Ipsum available, alteration</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SERVICE-AREA END -->
+			
+			<!-- SUBSCRIBE-AREA START -->
+			<div class="suscribe-area margin-bottom-80">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="subscribe">
+								<div class="subscribe-brief">
+									<h3>enter your email address</h3>
+									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+								</div>
+								<div class="subscribe-form">
+									<form action="#">
+										<input type="text" placeholder="Enter email to subscribe" />
+										<button type="submit">Submit</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SUBSCRIBE-AREA START END -->
+		</section>
+		<!-- PAGE-CONTENT END -->
+				
+		<!-- FOOTER-AREA START -->
+		<footer class="footer-area">
+			<div class="footer-top">
+				<div class="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-sm-4 col-xs-12">
+								<div class="single-footer footer-logo">
+									<img src="../static/img/logonew1.png" alt="" />
+									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<div class="single-footer footer-contact">
+									<h2>contact us</h2>
+									<ul>
+										<li>
+											<i class="sp-phone"></i> 
+											<span>+91 9213518420</span>
+										</li>
+										<li>
+											<i class="sp-email"></i>
+											<span> FashionFactory@domain.com</span>
+											<span>FashionFactory@email.info</span>
+										</li>
+										<li>
+											<i class="sp-map-marker"></i> 
+											<span>727/az Pillayar nagar</span>
+											<span>South DC-3450 Fort.</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-2 hidden-sm col-xs-12">
+								<div class="single-footer footer-menu">
+									<h2>company</h2>
+									<ul>
+										<li><a href="#">Account</a></li>
+										<li><a href="#">Log in</a></li>
+										<li><a href="#">Regester</a></li>
+										<li><a href="#">Shop</a></li>
+										<li><a href="#">Chakeout</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-4 col-xs-12">
+								<div class="single-footer footer-message">
+									<form action="#">
+										<h2>Quick contact</h2>
+										<div class="footer-message-box">
+											<input type="text" placeholder="your email address" />
+											<textarea placeholder="your messege" ></textarea>
+											<input type="submit" value="submit"/>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="copyright-brief">
+								<p>Copyright &copy; <a href="#">FashionFactory</a> All right reserved</p>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="footer-social text-right">
+								<a href="#"><i class="sp-facebook"></i></a>
+								<a href="#"><i class="sp-twitter"></i></a>
+								<a href="#"><i class="sp-linkedin"></i></a>
+								<a href="#"><i class="sp-google"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- FOOTER-AREA END -->
+
+		
+		<!-- all js here -->
+		<!-- jquery latest version -->
+        <script src="{{ url_for('static', filename= 'js/vendor/jquery-1.12.0.min.js') }}"></script>
+		<!-- bootstrap js -->
+        <script src="{{ url_for('static', filename= 'js/bootstrap.min.js') }}"></script>
+		<!-- jquery.nivo.slider js -->
+        <script src="{{ url_for('static', filename= 'lib/js/jquery.nivo.slider.js') }}"></script>
+        <script src="{{ url_for('static', filename= 'lib/home.js') }}"></script>
+		<!-- owl.carousel js -->
+        <script src="{{ url_for('static', filename= 'js/owl.carousel.min.js') }}"></script>
+		<!-- meanmenu js -->
+        <script src="{{ url_for('static', filename= 'js/jquery.meanmenu.js') }}"></script>
+		<!-- jquery-ui js -->
+        <script src="{{ url_for('static', filename= 'js/jquery-ui.min.js') }}"></script>
+		<!-- lightbox.min js -->
+        <script src="{{ url_for('static', filename= 'js/lightbox.min.js') }}"></script>
+		<!-- countdon.min js -->
+        <script src="{{ url_for('static', filename= 'js/countdon.min.js') }}"></script>
+		<!-- wow js -->
+        <script src="{{ url_for('static', filename= 'js/wow.min.js') }}"></script>
+		<script type="text/javascript">
+			new WOW().init();
+		</script>
+		<!-- plugins js -->
+        <script src="{{ url_for('static', filename= 'js/plugins.js') }}"></script>
+		<!-- main js -->
+        <script src="{{ url_for('static', filename= 'js/main.js') }}"></script>
+
+	{% endblock %}
+    </body>
+</html>
